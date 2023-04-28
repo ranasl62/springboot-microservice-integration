@@ -1,0 +1,15 @@
+<h2>Messages</h2>
+<ng-container *ngIf="messageService.messages.length">
+  <button type="button" class="clear" (click)="messageService.clear()">clear</button>
+  <br>
+  <ol>
+    <li *ngFor='let message of messageService.messages'> {{message}} </li>
+  </ol>
+</ng-container>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

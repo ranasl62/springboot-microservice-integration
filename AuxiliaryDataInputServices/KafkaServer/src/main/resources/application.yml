@@ -1,0 +1,31 @@
+server:
+  port: 8081
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+
+spring:
+  kafka:
+    #it's work for local kafka setup
+    bootstrap-servers: http://localhost:9092
+    consumer:
+      properties:
+        spring.json.trusted.packages: "*"
+        #spring.json.value.default.type: "edu.miu.maincpudataservice.domain.CpuData"
+  cloud:
+    config:
+      import-check.enabled: false
+
+  application:
+    name: Kafka-Server
+
+kafka:
+  topics:
+    cpu-data: TOPIC_CPU-1
+    disk-data: TOPIC_DISK-1
+    network-data: TOPIC_NETWORK-1
+    ram-data: TOPIC_RAM-1
