@@ -1,0 +1,37 @@
+<div class="container d-flex justify-content-center">
+  <div class="row d-flex align-items-end">
+    <div class="col-auto">
+      <label for="staticEmail2">Choose date</label>
+      <datepicker (getDate)="getDateChanged($event)"></datepicker>
+    </div>
+
+    <div class="col-auto">
+      <label for="inputPassword2">Start time</label>
+      <div class="default-time-example">
+        <input aria-label="default time" [format]="24" [ngxTimepicker]="defaultValue1" [value]="startTime" readonly>
+        <ngx-material-timepicker #defaultValue1 (timeSet)="getStartTimeChanged($event)"></ngx-material-timepicker>
+      </div>
+    </div>
+    
+    <div class="col-auto">
+      <label for="inputPassword2">End time</label>
+      <div class="default-time-example">
+        <input aria-label="default time" [format]="24" [ngxTimepicker]="defaultValue" [value]="endTime" readonly>
+        <ngx-material-timepicker #defaultValue (timeSet)="getEndTimeChanged($event)"></ngx-material-timepicker>
+      </div>
+    </div>
+
+
+    <div class="col-auto">
+      <label>Topic name</label>
+      <dropdown-list (getTopicName)="getTopicChanged($event)"></dropdown-list>
+    </div>
+
+    <div class="col-auto">
+      <button (click)="generateReport()" class="btn btn-primary mb-3 mrb">Generate report</button>
+    </div>
+    <div class="col-auto">
+      <button (click)="downloadCsv()" class="btn btn-primary mb-3 mrb">Download csv</button>
+    </div>
+  </div>
+</div>
